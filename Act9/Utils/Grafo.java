@@ -5,7 +5,7 @@ import java.util.Set;
 //Me marea la nueva interfaz
 public class Grafo {
     //Representar grafo por matriz de adyacencia
-    private boolean [][]A;
+    private final boolean [][]A;
     //Cantidad de vertices
     public Grafo (int vertices){
         A = new boolean[vertices][vertices];
@@ -34,7 +34,7 @@ public class Grafo {
     public Set<Integer> vecinos(int i){
         VerificarVertice(i);
 
-        Set<Integer> dato = new HashSet<Integer>();
+        Set<Integer> dato = new HashSet<>();
         for (int j=0; j < A.length; ++j){
             if (this.aristaExistente(i, j)){
                 dato.add(j);
