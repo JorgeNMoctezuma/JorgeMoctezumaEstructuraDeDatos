@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 public class HashTable <K, V>{
 
-    private ArrayList<Entry<K, V>>[] table;
+    private ArrayList<Entry<K, V>>[] tabla;
     private int tamaño = 0;
 
     public HashTable(int capacity) {
-        table = new ArrayList[capacity];
+        tabla = new ArrayList[capacity];
         for (int i = 0; i < capacity; i++) {
-            table[i] = new ArrayList<>();
+            tabla[i] = new ArrayList<>();
         }
     }
 
@@ -22,23 +22,23 @@ public class HashTable <K, V>{
     }
 
     public HashTable<K, V> add(K key, V value) {
-        int index = Math.abs(key.hashCode()) % table.length;
-        for (Entry<K, V> entry : table[index]) {
+        int index = Math.abs(key.hashCode()) % tabla.length;
+        for (Entry<K, V> entry : tabla[index]) {
             if (entry.getKey().equals(key)) {
                 entry.setValue(value);
                 return this;
             }
         }
-        table[index].add(new Entry<> (key, value));
+        tabla[index].add(new Entry<> (key, value));
         tamaño++;
         return this;
     }
 
 
     public ArrayList<V> getByKey(K key) {
-        int index = Math.abs(key.hashCode()) % table.length;
+        int index = Math.abs(key.hashCode()) % tabla.length;
         ArrayList<V> values = new ArrayList<V>();
-        for (Entry<K, V> entry : table[index]){
+        for (Entry<K, V> entry : tabla[index]){
             if (entry.getKey().equals(key)){
                 values.add(entry.getValue());
             }
@@ -48,7 +48,7 @@ public class HashTable <K, V>{
 
     public ArrayList<V> getValues() {
         ArrayList<V> values = new ArrayList<>();
-        for (ArrayList<Entry<K, V>> bucket : table) {
+        for (ArrayList<Entry<K, V>> bucket : tabla) {
             for (Entry<K, V> entry : bucket){
                 values.add(entry.getValue());
             }
