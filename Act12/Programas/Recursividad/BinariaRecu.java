@@ -10,6 +10,7 @@ public class BinariaRecu {
             System.out.println("El dato se encuentra en: " + j);
         }
 
+
     }
 
     public static int BinariaRecu (int [] A,int x, int ini, int fin){

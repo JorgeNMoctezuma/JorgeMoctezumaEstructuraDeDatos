@@ -7,6 +7,7 @@ public class FactoRecu {
         System.out.println(facto);
     }
 
+
     public static long FactoRec(long n){
         if (n <= 1){
             return n;

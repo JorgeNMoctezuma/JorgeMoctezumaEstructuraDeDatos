@@ -46,5 +46,6 @@ public class BinariaIte {
             System.out.println("Elemento invalido");
         }
     }
+
 }
 

@@ -2,6 +2,7 @@ package Act12.Programas.Iterativa;
 import java.util.Scanner;
 
 public class FiboIte {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
