@@ -1,6 +1,6 @@
 package Exam5;
 public class Exam5 {
-    private int[] perm;
+    private int[] perma;
     private boolean[] visitado;
     private int x;
 
@@ -11,12 +11,12 @@ public class Exam5 {
 
     public Exam5(int n) {
 
-        perm = new int[n];
+        perma = new int[n];
         visitado = new boolean[n];
         x = 0;
 
         for (int i=0; i<n; i++) {
-            perm[i] = -1;
+            perma[i] = -1;
             visitado[i] = false;
         }
     }
@@ -28,18 +28,18 @@ public class Exam5 {
     public void revisa(int location) {
 
         int i;
-        if (location == perm.length) {
+        if (location == perma.length) {
             solucion();
             x++;
         }
 
-        for (i=0; i<perm.length; i++) {
+        for (i=0; i<perma.length; i++) {
 
             if (!visitado[i]) {
 
                 if (!choque(location, i)) {
 
-                    perm[location] = i;
+                    perma[location] = i;
                     visitado[i] = true;
                     revisa(location+1);
                     visitado[i] = false;
@@ -54,7 +54,7 @@ public class Exam5 {
 
         int i;
         for (i=0; i<location; i++)
-            if (Math.abs(location - i) == Math.abs(perm[i] - row))
+            if (Math.abs(location - i) == Math.abs(perma[i] - row))
                 return true;
         return false;
     }
