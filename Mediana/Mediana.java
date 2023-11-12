@@ -21,5 +21,6 @@ public class Mediana {
 
         // Imprimir la media
         System.out.println("La media es " + media);
+
     }
 }
