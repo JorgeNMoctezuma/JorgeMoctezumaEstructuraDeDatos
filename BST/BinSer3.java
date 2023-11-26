@@ -150,9 +150,9 @@ class Main{
         bst.orden();
 
         boolean ret_val = bst.buscar (6);
-        System.out.println("\nExiste nodo 50?: " + ret_val );
+        System.out.println("\nExiste nodo 6?: " + ret_val );
         ret_val = bst.buscar (10);
-        System.out.println("\nExiste nodo 13?: " + ret_val );
+        System.out.println("\nExiste nodo 10?: " + ret_val );
     }
 }
 
